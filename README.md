@@ -1,1 +1,1 @@
-# vr-web-promotion
+# 插件宣传图片

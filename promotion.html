@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-b from-[#527CF0] via-[#656BEB] via-[#7E63DE] to-[#7E63DE]">
+
+    <!-- 语言切换按钮（透明，悬浮右上角） -->
+    <button id="lang-btn" onclick="toggleLang()" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-white font-semibold text-sm opacity-0 hover:opacity-60 transition-opacity duration-300 cursor-pointer select-none border border-white/30">
+        EN
+    </button>
+
+    <div class="flex flex-col items-center justify-center w-full h-screen" onclick="toggleLang()">
+        <h1 class="text-6xl font-bold text-white mt-12">
+            <span data-zh="自动接管网页视频" data-en="Auto Capture Web Videos">自动接管网页视频</span>
+        </h1>
+        <h1 class="text-3xl text-white mt-8">
+            <span data-zh="一键开启" data-en="One-click to start">一键开启</span>
+            <span class="text-pink-500" data-zh="VR播放" data-en="VR Playback">VR播放</span>
+        </h1>
+        <img class="mt-auto" width="1100" src="assets/xc1.png" alt="logo">
+    </div>
+
+    <div class="flex flex-col items-center justify-center w-full h-screen" onclick="toggleLang()">
+        <h1 class="text-6xl font-bold text-white mt-12">
+            <span class="text-pink-500" data-zh="放大" data-en="Zoom">放大</span>
+            <span data-zh=" 缩小 转换视角" data-en=" Shrink, Change View"> 缩小 转换视角</span>
+        </h1>
+        <h1 class="text-3xl text-white mt-8">
+            <span data-zh="鼠标 " data-en="Mouse ">鼠标 </span>
+            <span class="text-pink-500" data-zh="随心所欲" data-en="Full Control">随心所欲</span>
+        </h1>
+        <img class="mt-auto" width="1000" src="assets/xc2.png" alt="logo">
+    </div>
+
+    <div class="flex flex-col items-center justify-center w-full h-screen" onclick="toggleLang()">
+        <h1 class="text-6xl font-bold text-white mt-12">
+            <span class="text-pink-500" data-zh="本地资源？" data-en="Local Files?">本地资源？</span>
+            <span data-zh=" 网址？" data-en=" URLs?"> 网址？</span>
+        </h1>
+        <h1 class="text-3xl text-white mt-8">
+            <span data-zh="依旧 " data-en="Still ">依旧 </span>
+            <span class="text-pink-500" data-zh="胜任" data-en="Got It">胜任</span>
+        </h1>
+        <img class="mt-auto" width="1000" src="assets/xc3.png" alt="logo">
+    </div>
+
+    <script>
+        let isEn = false;
+
+        function toggleLang() {
+            isEn = !isEn;
+            const btn = document.getElementById('lang-btn');
+            btn.textContent = isEn ? '中文' : 'EN';
+            document.querySelectorAll('[data-zh]').forEach(el => {
+                el.textContent = isEn ? el.dataset.en : el.dataset.zh;
+            });
+        }
+    </script>
+</body>
+
+</html>
